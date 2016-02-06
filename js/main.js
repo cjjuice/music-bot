@@ -1,5 +1,5 @@
 //create one of Tone's built-in synthesizers
-var synth = new Tone.MonoSynth();
+var synth = new Tone.SimpleAM();
 
 //connect the synth to the master output channel
 synth.toMaster();
@@ -10,7 +10,14 @@ keys = {
   "G Major": ["G4", "A4", "B4", "C5", "D5", "E5", "F#5", "G5"],
   "D Major": ["D4", "E4", "F#4", "G4", "A4", "B4", "C#5", "D5"],
   "A Major": ["A4", "B4", "C#5", "D5", "E5", "F#5", "G#5", "A5"],
-  "E Major": ["E4", "F#4", "G#4", "A4", "B4", "C#5", "D#5", "E5"]
+  "E Major": ["E4", "F#4", "G#4", "A4", "B4", "C#5", "D#5", "E5"],
+  "B Major": ["B4", "C#5", "D#5", "E5", "F#5", "G#5", "A#5", "B5"],
+  "F# Major": ["F#4", "G#4", "A#4", "B4", "C#5", "D#5", "E#5", "F#5"],
+  "Db Major": ["Db4", "Eb4", "F4", "Gb4", "Ab4", "Bb4", "C5", "Db5"],
+  "Ab Major": ["Ab4", "Bb4", "C5", "Db5", "Eb5", "F5", "G5", "Ab5"],
+  "Eb Major": ["Eb4", "F4", "G4", "Ab4", "Bb4", "C5", "D5", "Eb5"],
+  "Bb Major": ["Bb4", "C5", "D5", "Eb5", "F5", "G5", "A5", "Bb5"],
+  "F Major": ["F4", "G4", "A4", "Bb4", "C5", "D5", "E5", "F5"]
 }
 var key = keys["C Major"];
 var note = "C4";
@@ -101,7 +108,7 @@ Tone.Transport.setInterval(function(time){
 
   // play note
   synth.triggerAttackRelease(nextNote, "8n", time);
-  $("#notes-played").append(nextNote);
+  $("#notes-played").append(nextNote + " ");
 
   if (i == 32) {
     i = 1;
