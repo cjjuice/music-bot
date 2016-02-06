@@ -43,6 +43,7 @@ keys = {
   "g harmonic minor": ["G4", "A4", "Bb4", "C5", "D5", "Eb5", "F#5", "G5"],
   "d harmonic minor": ["D4", "E4", "F4", "G4", "A4", "Bb4", "C#5", "D5"]
 }
+var noteLengths = ["16n", "8n", "4n", "2n", "1n"];
 var key = keys["C Major"];
 var note = "C4";
 var currentKey = "C Major";
@@ -128,11 +129,18 @@ function getNote(notes, beat) {
 var i = 1;
 Tone.Transport.scheduleRepeat(function(time){
 
+  var prevNote = nextNote;
   var nextNote = getNote(key, i);
 
+  if (Math.random() > 0.5) {
+    var note = prevNote;
+  } else {
+    var note = nextNote;
+  }
+
   // play note
-  synth.triggerAttackRelease(nextNote, "8n", time);
-  $("#notes-played").append(nextNote + " ");
+  synth.triggerAttackRelease(note, "8n", time);
+  $("#notes-played").append(note + " ");
 
   if (i == 32) {
     i = 1;
