@@ -29,7 +29,19 @@ keys = {
   "f minor": ["F4", "G4", "Ab4", "Bb4", "C5", "Db5", "Eb5", "F5"],
   "c minor": ["C4", "D4", "Eb4", "F4", "G4", "Ab4", "Bb4", "C5"],
   "g minor": ["G4", "A4", "Bb4", "C5", "D5", "Eb5", "F5", "G5"],
-  "d minor": ["D4", "E4", "F4", "G4", "A4", "Bb4", "C5", "D5"]
+  "d minor": ["D4", "E4", "F4", "G4", "A4", "Bb4", "C5", "D5"],
+  "a harmonic minor": ["A4", "B4", "C5", "D5", "E5", "F5", "G#5", "A5"],
+  "e harmonic minor": ["E4", "F#4", "G4", "A4", "B4", "C5", "D#5", "E4"],
+  "b harmonic minor": ["B4", "C#5", "D5", "E5", "F#5", "G5", "A#5", "B5"],
+  "f# harmonic minor": ["F#4", "G#4", "A4", "B5", "C#5", "D5", "E#5", "F#5"],
+  "c# harmonic minor": ["C#4", "D#4", "E4", "F#4", "G#4", "A4", "B#4", "C#5"],
+  "g#/ab harmonic minor": ["G#4", "A#4", "B4", "C#5", "D#5", "E5", "G5", "G#5"],
+  "d#/eb harmonic minor": ["Eb4", "F4", "Gb4", "Ab4", "Bb4", "Cb5", "D5", "Eb5"],
+  "bb harmonic minor": ["Bb4", "C5", "Db5", "Eb5", "F5", "Gb5", "A5", "Bb5"],
+  "f harmonic minor": ["F4", "G4", "Ab4", "Bb4", "C5", "Db5", "E5", "F5"],
+  "c harmonic minor": ["C4", "D4", "Eb4", "F4", "G4", "Ab4", "B4", "C5"],
+  "g harmonic minor": ["G4", "A4", "Bb4", "C5", "D5", "Eb5", "F#5", "G5"],
+  "d harmonic minor": ["D4", "E4", "F4", "G4", "A4", "Bb4", "C#5", "D5"]
 }
 var key = keys["C Major"];
 var note = "C4";
