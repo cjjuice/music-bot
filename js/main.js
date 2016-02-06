@@ -12,12 +12,24 @@ keys = {
   "A Major": ["A4", "B4", "C#5", "D5", "E5", "F#5", "G#5", "A5"],
   "E Major": ["E4", "F#4", "G#4", "A4", "B4", "C#5", "D#5", "E5"],
   "B Major": ["B4", "C#5", "D#5", "E5", "F#5", "G#5", "A#5", "B5"],
-  "F# Major": ["F#4", "G#4", "A#4", "B4", "C#5", "D#5", "E#5", "F#5"],
-  "Db Major": ["Db4", "Eb4", "F4", "Gb4", "Ab4", "Bb4", "C5", "Db5"],
+  "F#/Gb Major": ["F#4", "G#4", "A#4", "B4", "C#5", "D#5", "E#5", "F#5"],
+  "C#/Db Major": ["Db4", "Eb4", "F4", "Gb4", "Ab4", "Bb4", "C5", "Db5"],
   "Ab Major": ["Ab4", "Bb4", "C5", "Db5", "Eb5", "F5", "G5", "Ab5"],
   "Eb Major": ["Eb4", "F4", "G4", "Ab4", "Bb4", "C5", "D5", "Eb5"],
   "Bb Major": ["Bb4", "C5", "D5", "Eb5", "F5", "G5", "A5", "Bb5"],
-  "F Major": ["F4", "G4", "A4", "Bb4", "C5", "D5", "E5", "F5"]
+  "F Major": ["F4", "G4", "A4", "Bb4", "C5", "D5", "E5", "F5"],
+  "A Minor": ["A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"],
+  "E Minor": ["E4", "F#4", "G4", "A4", "B4", "C5", "D5", "E4"],
+  "B Minor": ["B4", "C#5", "D5", "E5", "F#5", "G5", "A5", "B5"],
+  "F# Minor": ["F#4", "G#4", "A4", "B5", "C#5", "D5", "E5", "F#5"],
+  "C# Minor": ["C#4", "D#4", "E4", "F#4", "G#4", "A4", "B4", "C#5"],
+  "G#/Ab Minor": ["G#4", "A#4", "B4", "C#5", "D#5", "E5", "F#5", "G#5"],
+  "D#/Eb Minor": ["Eb4", "F4", "Gb4", "Ab4", "Bb4", "Cb5", "Db5", "Eb5"],
+  "Bb Minor": ["Bb4", "C5", "Db5", "Eb5", "F5", "Gb5", "Ab5", "Bb5"],
+  "F Minor": ["F4", "G4", "Ab4", "Bb4", "C5", "Db5", "Eb5", "F5"],
+  "C Minor": ["C4", "D4", "Eb4", "F4", "G4", "Ab4", "Bb4", "C5"],
+  "G Minor": ["G4", "A4", "Bb4", "C5", "D5", "Eb5", "F5", "G5"],
+  "D Minor": ["D4", "E4", "F4", "G4", "A4", "Bb4", "C5", "D5"],
 }
 var key = keys["C Major"];
 var note = "C4";
@@ -102,7 +114,7 @@ function getNote(notes, beat) {
 
 //create a callback which is invoked every quarter note
 var i = 1;
-Tone.Transport.setInterval(function(time){
+Tone.Transport.scheduleRepeat(function(time){
 
   var nextNote = getNote(key, i);
 
@@ -144,7 +156,7 @@ $(document).ready(function() {
   });
 
   // key handler
-  $("#key-buttons button").on("click", function(event) {
+  $(".key-buttons button").on("click", function(event) {
      currentKey = $(event.currentTarget).text();
      key = keys[currentKey];
      $("#key-val").text(currentKey);
